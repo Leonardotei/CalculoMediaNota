@@ -3,12 +3,14 @@
 
 int main()
 {
-    // Declaração de variáveis
+    // Declaraï¿½ï¿½o de variï¿½veis
     float nota1;
     float nota2;
     float nota3;
     float nota4;
+    float exame;
     float mediaAnual;
+    float mediaFinal;
 
     // Entrada
     // Nota 1
@@ -47,14 +49,31 @@ int main()
     mediaAnual = (nota1 + nota2 + nota3 + nota4) / 4;
 
     // Criticar para saber se o aluno esta aprovado ou retido
-    // Saída
+    // Saï¿½da
     if (mediaAnual >= 7)
     {
         printf("APROVADO!!");
     }
     else
     {
-        printf("REPROVADO!!");
+        printf("Reprovado, aluno devera realizar exame. Insira nota do exame: ");
+        scanf("%f", &exame);
+        if (exame>10 || exame<0)
+        {
+            printf("NOTA INVALIDA!");
+            abort();
+        }
+
+        mediaFinal = (mediaAnual + exame) / 2;
+
+        if(mediaFinal>=5)
+        {
+            printf("APROVADO!!");
+        }
+        else
+        {
+            printf("REPROVADO!!");
+        }
     }
     return 0;
 }
