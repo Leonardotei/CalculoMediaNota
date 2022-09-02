@@ -1,10 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main()
 {
+    int continuar=1;
+
+    do
+    {
+        printf("\tMenu de selecao\n\n\tEscolha uma opcao:\n\n");
+        printf("1. Calculo de media do aluno\n");
+        printf("2. Como funciona?\n");
+        printf("0. Sair\n");
+
+        scanf("%d", &continuar);
+        system("cls || clear");
+
+        switch(continuar)
+        {
+            case 1:
+                calculoMedia();
+                break;
+
+            case 2:
+                ajuda();
+                break;
+
+            case 0:
+                sair();
+                break;
+
+            default:
+                printf("Digite uma opcao valida.\n");
+        }
+    }while(continuar);
+}
+void calculoMedia()
+{
     // Declaracao de variaveis
-    int aluno;
     float nota1, nota2, nota3, nota4, exame, mediaAnual, mediaFinal;
 
     // Entrada
@@ -48,7 +81,7 @@ int main()
     // Sa�da
     if (mediaAnual >= 7)
     {
-        printf("\nAPROVADO!!");
+        printf("\nAPROVADO!!\n\n");
     }
     else
     {
@@ -64,13 +97,34 @@ int main()
 
         if(mediaFinal>=5)
         {
-            printf("\nAPROVADO!!");
+            printf("\nAPROVADO!!\n\n");
         }
         else
         {
-            printf("\nREPROVADO!!");
+            printf("\nREPROVADO!!\n\n");
         }
     }
     return 0;
 }
-
+void ajuda()
+{
+    float voltar;
+    printf("\nPrimeiro voce deve inserir as 4 notas que tirou no semestre."
+           "\nO programa pega estas 4 notas e divide por 4."
+           "\nEntao sera calculado a sua media, e se for maior ou igual a 7, o aluno e aprovado."
+           "\nCaso reprovado, devera informar a nota do exame."
+           "\nAo inserir a nota do exame, sera feito um novo calculo: a sua media + exame / 2."
+           "\nApos informar a nota do exame, sera informado se o aluno foi aprovado ou retido.\n\n"
+           "\n\nDigite 0 para retornar: ");
+           scanf("%f", &voltar);
+           if (voltar != 0)
+           {
+               printf("Digito invalido");
+           }
+           system("cls || clear");
+}
+void sair()
+{
+    printf("\nObrigado por ultilizar nosso programa, esperamos que tenha ajudado\n\n\tVolte sempre! :)\n");
+    sleep (5);
+}

@@ -7,7 +7,8 @@
 	<stdio.h>
 	<stdlib.h>
 
-1662149004 source:c:\users\leonardo\desktop\linguagem_c\main.c
+1662157441 source:c:\users\leonardo\desktop\linguagem_c\main.c
 	<stdio.h>
 	<stdlib.h>
+	<locale.h>
 
